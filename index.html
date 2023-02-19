@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css" >
+    <link rel="stylesheet" href="css/style.css" >
+    <style>
+      .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav
+      .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+      color: rgba(255, 255, 255, 0.9);
+      }
+      .navbar-light .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.907);
+      transition: .3s;
+      }
+      .navbar-light .navbar-nav .nav-link:hover {
+      color: #007bff;
+      }
+      .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: 0.25rem 1.5rem;
+      clear: both;
+      font-weight: 400;
+      color: #e9ecef;
+      text-align: inherit;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+      transition: .3s;
+      }
+      .dropdown-item:hover {
+      color: #007bff;
+      background-color: #343a40;
+      }
+      .modal-header {
+        color: #007bff;
+      }
+      .card-link {
+        transition: .3s;
+      }
+      .card-link:hover {
+        color: white;
+        background-color: #0665ca;
+      }
+      .btn5:hover {
+        text-decoration: none;
+        color: #007bff;
+      }
+</style>
+</head>
+<!--navbar--> 
+<nav class="navbar navbar-expand-lg navbar-light bg-dark " >
+    <input class="me-3 rounded-circle" type="image" src="images/logo.jpg" width="40px" height="40px">
+    <a class="navbar-brand text-primary" href="#">MEDICAL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" style="color: #223645;">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Care</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Book now
+          </a>
+          <div class="dropdown-menu bg-dark">
+            <a class="dropdown-item" href="#">Neurology Sargery</a>
+            <a class="dropdown-item" href="#">Body Surgery</a>
+            <a class="dropdown-item" href="#">Dental Fillings</a>
+
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0 me-3" type="submit">Search</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">login</button>
+<!-- modal -->
+<li class="nav-item ml-3 bg-primary border-primary border-10" style="list-style: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+  <button type="button" class="btn book" data-toggle="modal" data-target="#staticBackdrop">
+    BOOK NOW
+  </button>
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark" style="padding: 15px;color: #cfc7df;">
+        <div class="modal-header" style="padding: 10px 0px;">
+          <h5 class="modal-title" id="staticBackdropLabel">Book NOW</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4"></label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" style="width: 100%;margin: 5px 0px;">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4"></label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Your Name"
+                style="width: 100%;margin: 5px 0px;">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress"></label>
+            <input type="tel" class="form-control" id="inputAddress" placeholder="Your Phone"
+              style="width: 100%;margin: 5px 0px;">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2"></label>
+            <input type="number" class="form-control" id="inputAddress2" placeholder="#of people"
+              style="width: 100%;margin: 5px 0px;">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4"></label>
+              <input type="date" class="form-control" id="inputEmail4" placeholder="Date"
+                style="width: 100%;margin: 5px 0px;">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4"></label>
+              <input type="time" class="form-control" id="inputPassword4" placeholder="Time"
+                style="width: 100%;margin: 5px 0px;">
+            </div>
+          </div>
+          <button type="submit" class="btn book bg-light" data-dismiss="modal" style="margin-top: 10px;">Book a date</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</li>
+
+<!--/modal-->
+
+
+
+      </form>
+    </div>
+  </nav>
+<!--/navbar-->
+
+<!--carousel--> 
+<div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active slider1">
+        <div class="slider-content container"> 
+        <div class="carousel-caption d-none d-md-block row">
+          <div class="col-xl-12">
+          <h3 class=" slider-caption text-capitalize font-weight-bold" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Find a doctor<br> & Book online</h3>
+          <p class="paragraph">easily book a doctor anywhere in the world</p>
+        <a class="btn2" style="text-decoration: none;">Book now</a>  
+      </div>
+    </div>
+
+        </div>
+      </div>
+      <div class="carousel-item slider2"> 
+        <div class="slider-content container"> 
+        <div class="carousel-caption d-none d-md-block row"> 
+          <div class="col-xl-12">
+          <h3 class="slider-caption text-capitalize  font-weight-normal " style=" color: #1F1F1F !important; 
+                font-size: 70px;
+          letter-spacing: 2px;
+          font-weight: 300;
+
+          "> 
+          <span class="sliderspan font-weight-bold" style="font-weight: 700;">Health care</span> <br>
+          For Hole Family 
+        </h3>
+          <p class="paragraph" style="font-size: 50;">In healthcare sector, service excellence is the facility of <br>
+            the hospital as
+healthcare service provider to consistently.
+          </p>
+          <a class="btn2" style="text-decoration: none;"  href="#">Check Our Services </a>
+        </div>
+        </div>
+        </div>
+      </div>
+      <div class="carousel-item slider3"> 
+        <div class="slider-content container"> 
+        <div class="carousel-caption d-none d-md-block row"> 
+          <div class="col-xl-12">
+          <h3 class="slider-caption text-capitalize  font-weight-normal " style=" color: #1F1F1F !important; 
+                font-size: 70px;
+          letter-spacing: 2px;
+          font-weight: 300;
+
+          "> 
+          <span class="sliderspan font-weight-bold" style="font-weight: 700;">Health & Doctor</span> <br>
+          For Hole Family 
+        </h3>
+          <p class="paragraph text-white">Avoids pleasure itself, because it is pleasure but because those <br> who do not know how rationally encounter consequences that extremely system weathe.
+          </p>
+          <a class="btn2" style="text-decoration: none;"  href="#">Check Our Services </a>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+<!--/carousel--> 
+
+<!--cards-->
+<div class="card back bg-dark p-4 text-white" >
+  <div class="card-body">
+    <h3 class="card-title">For Emergency Cases! </h3>
+    <h4 class="card-subtitle mb-2 text-muted">1-800-555-0120</h4>
+    <p class="card-text">Building a healthy environment that supports development for the community. <br> Your personal case manager will ensure that you receive the best possible care. </p>
+    <a href="#" class="card-link">Call us</a>
+    <a href="#" class="card-link mt-4 ml-5">emergency case</a>
+  </div>
+</div>
+<!--/cards-->
+<!--collapse accordian -->
+ <h1 class="text-center text-dark bg-light p-5 m-0 collapse-h"  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" >Healing Anywhere </h1>
+<div class="accordion " style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="fg btn btn-link btn-block text-left " style="text-decoration: none;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Neurology Sargery        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Clinical excellence must be the priority for any health care service provider.      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="fg btn btn-link btn-block text-left collapsed" style="text-decoration: none;"  type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Physical Therapy        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Esteem spirit temper too say adieus who direct esteem.      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="fg btn btn-link btn-block text-left collapsed" style="text-decoration: none;"  type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Skin Surgery        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Esteem spirit temper too say adieus who direct esteem.      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /collapse accordian -->
+
+
+<!--services-->
+
+<div class="about-area pt-120 pb-150" style="padding: 140px;">
+
+<div class="container">
+  <div class="row">
+   
+    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <div class="section-title text-center pos-rel mb-75" style="position: relative; margin-bottom: 75px;">
+          <div class="section-icon">
+              <img class="section-back-icon" src="images/section-back-icon.png" alt="">
+          </div>
+          <div class="section-text pos-rel" style="position: relative;">
+              <h5 style="margin-bottom: 28px; font-size: 20px;
+              font-family: 'Rubik', sans-serif;
+              font-weight: 500;
+              color: #647589; line-height: 1.1; ">Departments</h5>
+              <h1 style="margin-bottom: 18px; font-size: 60px;
+              letter-spacing: -.3px;
+              line-height: 1.2; font-family: 'Poppins', sans-serif;color: #223645;
+margin-top: 0px;
+font-weight: 600;">Managed Your<br>Heathcare Services</h1>
+          </div>
+          <div class="section-line pos-rel" style="position: relative;">
+              <img src="images/section-title-line.png" alt="">
+          </div>
+      </div>
+  </div>
+
+  </div>
+  <div class="row">
+      <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="service-box service-box-border text-center mb-30">
+              <div class="service-thumb">
+                  <img src="images/service1.png" alt="">
+              </div>
+              <div class="service-content">
+                  <h3><a href="#">Body Surgery</a></h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                  <a class="service-link" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="service-box service-box-border text-center mb-30">
+              <div class="service-thumb">
+                  <img src="images/service2.png" alt="">
+              </div>
+              <div class="service-content">
+                  <h3><a href="#">Dental Care</a></h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                  <a class="service-link" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="service-box service-box-border text-center mb-30">
+              <div class="service-thumb">
+                  <img src="images/service3.png" alt="">
+              </div>
+              <div class="service-content">
+                  <h3><a href="#">Eye Care</a></h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                  <a class="service-link" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="service-box service-box-border text-center mb-30">
+              <div class="service-thumb">
+                  <img src="images/service4.png" alt="">
+              </div>
+              <div class="service-content">
+                  <h3><a href="#">Blood Cancer</a></h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                  <a class="service-link" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="service-box service-box-border text-center mb-30">
+              <div class="service-thumb">
+                  <img src="images/service5.png" alt="">
+              </div>
+              <div class="service-content">
+                  <h3><a href="#">Neurology Sargery</a></h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                  <a class="service-link" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="service-box service-box-border text-center mb-30">
+              <div class="service-thumb">
+                  <img src="images/service6.png" alt="">
+              </div>
+              <div class="service-content">
+                  <h3><a href="#">Allergic Issue</a></h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                  <a class="service-link" href="#">Read More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<!--/services-->
+
+<!-- our doctors -->
+<section class="team pt-55 pb-55">
+  <div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-7 col-md-10">
+            <div class="section-title pos-rel" style="margin-bottom: 150px;">
+                <div class="section-icon">
+                    <img class="section-back-icon back-icon-left" src="images/section-back-icon.png" style="position: absolute; left:0; right: 0; top: -50px;" alt="">
+                </div>
+                <div class="section-text pos-rel" style="position: relative;">
+                    <h5>Our Team</h5>
+                    <h1>A Professional &amp; Care Provider</h1>
+                </div>
+                <div class="section-line pos-rel" style="position: relative; left: 0; right:0; top:90px;">
+                    <img src="images/section-title-line.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-5">
+            <div class="section-button text-right d-none d-lg-block pt-80">
+                <a data-animation="fadeInLeft" data-delay=".6s" href="#" class="btn5 btn-icon ml-0" style=" border-radius: 30px;
+                padding-left: 84px;
+                padding-right: 50px;
+                padding-top: 24px;
+                padding-bottom: 22px;
+                background-color: rgb(225, 36, 84);
+                box-shadow: 0px 8px 16px 0px rgba(225, 36, 84, 0.2); "><span style=" position: absolute;
+                  left: 2px;
+                  text-align: center;
+                  width: 50px;
+                  height: 50px;
+                  top: 5px;
+                  line-height: 50px;
+                  background: #fff;
+                  transition: .3s;
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #223645;
+                  border-radius: 100%; ">+</span>Make Appointment</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="team-box text-center mb-60">
+                <div class="team-thumb mb-45 pos-rel" style="position: relative;">
+                    <img src="images/member1.png" alt="">
+                    <a class="team-link" href="doctor-details.html">+</a>
+                </div>
+                <div class="team-content">
+                    <h3>Rosalina D. Williamson</h3>
+                    <h6>Founder</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="team-box text-center mb-60">
+                <div class="team-thumb mb-45 pos-rel" style="position: relative;">
+                    <img src="images/member2.png" alt="">
+                    <a class="team-link" href="doctor-details.html">+</a>
+                </div>
+                <div class="team-content">
+                    <h3>Diconda PIran Will</h3>
+                    <h6>dentist</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="team-box text-center mb-60">
+                <div class="team-thumb mb-45 pos-rel" style="position: relative;">
+                    <img src="images/member3.png" alt="">
+                    <a class="team-link" href="doctor-details.html">+</a>
+                </div>
+                <div class="team-content">
+                    <h3>Hulk M. Kenbon</h3>
+                    <h6>neurologist</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="team-box text-center mb-60">
+                <div class="team-thumb mb-45 pos-rel" style="position: relative;">
+                    <img src="images/member4.png" alt="">
+                    <a class="team-link" href="doctor-details.html">+</a>
+                </div>
+                <div class="team-content">
+                    <h3>Haliam Z. Dicolaz</h3>
+                    <h6>Consultant</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="team-box text-center mb-60">
+                <div class="team-thumb mb-45 pos-rel" style="position: relative;">
+                    <img src="images/member5.png" alt="">
+                    <a class="team-link" href="doctor-details.html">+</a>
+                </div>
+                <div class="team-content">
+                    <h3>Nicolas D. Case</h3>
+                    <h6>dentist</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="team-box text-center mb-60">
+                <div class="team-thumb mb-45 pos-rel" style="position: relative;">
+                    <img src="images/member6.png" alt="">
+                    <a class="team-link" href="doctor-details.html">+</a>
+                </div>
+                <div class="team-content">
+                    <h3>Phumdon H. Norman</h3>
+                    <h6>neurologist</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!--/our doctors -->
+
+
+<!--about area-->
+<div class="about-area  pt-120 pb-80 " style="padding-bottom: 80px; padding-top: 180px; display: block;"> 
+  <div class="container">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="single-couter counter-box counter-box-white text-center mb-30">
+                <img src="images/counter-icon-7.png" alt="">
+                <h1 style=" color: #223645;
+                font-weight: 600;
+                font-size: 50px;
+                margin-top: 12px;
+                letter-spacing: -.3px;
+                line-height: 1.22;
+                margin-bottom: .5rem; "  ><span class="theme-color counter">540</span>+</h1>
+                <h6 class="green-color pb-20">Expert Doctors</h6>
+                <div class="counter-text mt-10">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        lab.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="single-couter counter-box counter-box-white text-center mb-30">
+                <img src="images/counter-icon-83.png" alt="">
+                <h1><span class="theme-color counter">899</span>+</h1>
+                <h6 class="green-color pb-20">Problem Solve</h6>
+                <span class="counter-shpae"></span>
+                <div class="counter-text mt-10">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        lab.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="single-couter counter-box counter-box-white text-center mb-30">
+                <img src="images/counter-icon-9.png" alt="">
+                <h1><span class="theme-color counter">100</span>+</h1>
+                <h6 class="green-color pb-20">Award Winner</h6>
+                <span class="counter-shpae"></span>
+                <div class="counter-text mt-10">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        lab.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--/about area-->
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="single-couter counter-box counter-box-white mb-30">
+          <img src="images/footer-logo-3.png" alt="" style="margin-bottom: 15px;">
+          <p style="margin-bottom: 15px;color: white;font-weight: 600;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor
+            incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+          <ul>
+            <li><i class="fas fa-envelope" style="margin-right: 14px;padding-left: 1px;"></i>info@examplemedical.com</li>
+            <li><i class="fas fa-door-closed" style="margin-right: 10px;"></i>examplemedical.com</li>
+            <li><i class="fab fa-font-awesome-flag" style="margin-right: 10px;margin-left: 3px;"></i>227 Marion Street, Columbia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="single-couter counter-box counter-box-white mb-30">
+          <h3 style="color: white;margin: 10px 0 48px 0;">Departments</h3>
+          <ul style="list-style-type: none;">
+            <li><a href="#">Surgery and Radiology</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Family Medicine</a></li>
+            <li><a href="#">Our Doctors</a></li>
+            <li><a href="#">Women’s Health</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Optician</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Pediatrics</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Dermatology</a></li>
+            <li><a href="#">Book an Appointment</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="single-couter counter-box counter-box-white mb-30" >
+          <h3 style="color: white;margin: 8px 0 50px 0;
+">News Feeds</h3>
+          <div class="blog-feeds pr-15">
+            <div class="signle-blog-feeds mb-20" style="margin-bottom: 20px;display: flex;">
+              <div class="blog-feeds-thumb">
+                <a href="news-details.html"><img src="images/feeds-thumb-1.jpg" alt="" ></a>
+              </div>
+              <div class="blog-feeds-text">
+                <h5 style="padding-left: 12px;"><a href="news-details.html">Lorem ipsum dolor sit am et,
+                    consectetur.</a></h5>
+                <span class="feeds-date">14 July 2019</span>
+              </div>
+            </div>
+            <div class="signle-blog-feeds mb-20" style="margin-bottom: 20px; display: flex;padding-left: 12px;">
+              <div class="blog-feeds-thumb">
+                <a href="news-details.html"><img src="images/feeds-thumb-2.jpg" alt=""></a>
+              </div>
+              <div class="blog-feeds-text">
+                <h5 style="padding-left: 12px;"><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                <span class="feeds-date">14 July 2019</span>
+              </div>
+            </div>
+            <div class="signle-blog-feeds  mb-20" style="margin-bottom: 20px;display: flex;padding-left: 12px;">
+              <div class="blog-feeds-thumb">
+                <a href="news-details.html"><img src="images/feeds-thumb-3.jpg" alt=""></a>
+              </div>
+              <div class="blog-feeds-text">
+                <h5 style="padding-left: 12px;"><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                <span class="feeds-date">14 July 2019</span>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <p style="color: white;font-size: 20px;">DEVELOPED BY OMAYMA</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- <footer>
+  <div class="footer-top primary-bg footer-map pos-rel pt-120 pb-80" style="padding-top: 120px; padding-bottom: 80px; position: relative;">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="">
+                <div class="footer-contact-info footer-contact-info-3 mb-40" style="margin-bottom: 40px;">
+                    <div class="footer-logo mb-35" style="margin-bottom: 35px;">
+                        <a href="#"><img src="images/footer-logo-3.png" alt=""></a>
+                    </div>
+                    <div class="footer-contact-content mb-25" style="margin-bottom: 25px;">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    </div>
+                    <div class="footer-emailing">
+                        <ul>
+                            <li><i class="fas fa-envelope"></i>info@examplemedical.com</li>
+                            <li><i class="fas fa-door-closed"></i>examplemedical.com</li>
+                            <li><i class="fab fa-font-awesome-flag"></i>227 Marion Street, Columbia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="footer-widget mb-40" style="margin-bottom: 40px;" >
+                    <div class="footer-title">
+                        <h3>Departments</h3>
+                    </div>
+                    <div class="footer-menu footer-menu-2">
+                        <ul>
+                            <li><a href="#">Surgery and Radiology</a></li>
+                            <li><a href="#">Departments</a></li>
+                            <li><a href="#">Family Medicine</a></li>
+                            <li><a href="#">Our Doctors</a></li>
+                            <li><a href="#">Women’s Health</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Optician</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Pediatrics</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Dermatology</a></li>
+                            <li><a href="#">Book an Appointment</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="footer-widget mb-40" style="margin-bottom: 40px;">
+                    <div class="footer-title">
+                        <h3>News Feeds</h3>
+                    </div>
+                    <div class="blog-feeds pr-15">
+                        <div class="signle-blog-feeds mb-20" style="margin-bottom: 20px;">
+                            <div class="blog-feeds-thumb">
+                                <a href="news-details.html"><img src="images/feeds-thumb-1.jpg" alt=""></a>
+                            </div>
+                            <div class="blog-feeds-text">
+                                <h5><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                                <span class="feeds-date">14 July 2019</span>
+                            </div>
+                        </div>
+                        <div class="signle-blog-feeds mb-20" style="margin-bottom: 20px;">
+                            <div class="blog-feeds-thumb">
+                                <a href="news-details.html"><img src="images/feeds-thumb-2.jpg" alt=""></a>
+                            </div>
+                            <div class="blog-feeds-text">
+                                <h5><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                                <span class="feeds-date">14 July 2019</span>
+                            </div>
+                        </div>
+                        <div class="signle-blog-feeds  mb-20" style="margin-bottom: 20px;" >
+                            <div class="blog-feeds-thumb">
+                                <a href="news-details.html"><img src="images/feeds-thumb-3.jpg" alt=""></a>
+                            </div>
+                            <div class="blog-feeds-text">
+                                <h5><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                                <span class="feeds-date">14 July 2019</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom pt-25 pb-12">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xl-12">
+                <div class="footer-copyright footer-copyright-3 text-center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</footer> -->
+
+
+
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
